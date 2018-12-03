@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("servidor.php");
+require_once("servidor.php");
 
 	if(isset($_GET['enviar'])) {
 		if(!empty($_GET['nome']) || !empty($_GET['email']) || !empty($_GET['senha'])){

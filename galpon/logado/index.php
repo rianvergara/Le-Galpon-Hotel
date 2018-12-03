@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once("servidor.php");
-include_once("cabecalho2.php");
+require_once("servidor.php");
+require_once("cabecalho2.php");
 	
 	$nome=$_SESSION['nome'];
 ?>

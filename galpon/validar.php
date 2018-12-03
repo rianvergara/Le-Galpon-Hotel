@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("servidor.php");
+require_once("servidor.php");
 
 if(isset($_POST['enviar'])) {
 	if (!empty($_POST['email']) || !empty($_POST['senha'])) {

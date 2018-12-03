@@ -8,8 +8,6 @@
 			<select name="tipo">
 				<option value="solteiro">Solteiro</option>
 				<option value="casal">Casal</option>
-				
-				
 			</select>
-				<input type="submit" value="Enviar" />
+				<input type="submit" value="Pesquisar">
 		</form>

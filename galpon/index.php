@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("servidor.php");
-include_once("cabecalho.php");
+require_once("cabecalho.php");
 
 if(!empty($_SESSION['mensagem'])) {
 		echo $_SESSION['mensagem'];
