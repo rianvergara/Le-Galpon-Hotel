@@ -9,7 +9,7 @@
         <ul>
             <li><a href="quartos.php">Quartos</a></li>
             <li><a href="clientes.php">Clientes</a></li>
-            <li><a href="">Serviços</a></li>
+            
         </ul>
     </div>
        

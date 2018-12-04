@@ -31,7 +31,8 @@
 			}else{
 				echo "Todos os quartos de casal estão indisponiveis.<br>";	
 			}
-		}else{
+			}
+		else{
 			$comando2="SELECT nr_quarto FROM quartos WHERE disponibilidade=1 and camas_solteiro=1";
 			$enviar2=mysqli_query($conn, $comando2);
 			
@@ -40,12 +41,11 @@
 				
 				foreach ($resultado2 as $solteiro) {
 					
-					?>
+				?>
 					<tr>
-						<td><form method="get" action="quartoreservado.php"">
-							<input type="text"  disabled="true" reandonly="true" name="solteiro" value="<?php echo $solteiro[0];?>"/>
-							<?php echo $solteiro[0];?>
-							<input type="submit" name="button" value="Enviar"></form></td><br><br>
+						<td><?php echo $solteiro[0];?><a href="quartoreservado.php/?numero=<?php echo $solteiro[0];?>">
+							<button>Reservar</button></a>
+						</td><br><br>
 					</tr>
 					<?php
 				}
@@ -53,6 +53,6 @@
 				echo "Todos os quartos de solteiro estão indisponiveis.<br>";	
 			}
 		}		
-	}	
+		}	
 ?>
 <a href="reserva.php">Voltar</a>

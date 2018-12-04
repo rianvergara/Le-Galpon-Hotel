@@ -4,7 +4,7 @@
 	require_once("cabecalho.php");
 	
 
-	echo $_GET['numero'];
+	// echo $_GET['numero'];
 	// die();
 	
 	if (isset($_GET['numero']) && !empty($_GET['numero'])) {
@@ -14,11 +14,10 @@
 		// die();
 		$enviar=mysqli_query($conn, $comando);
 		if ($enviar>0) {
-			echo "Quarto reservado com sucesso";
+			echo "Quarto reservado com sucesso<br>";
 		}else{
-			echo "Não foi possivel reservar";
+			echo "Não foi possivel reservar<br>";
 		}
 	}
-
-	#header("location:reserva.php");
 ?>	
+<a href="../index.php"><br>Voltar</a>
