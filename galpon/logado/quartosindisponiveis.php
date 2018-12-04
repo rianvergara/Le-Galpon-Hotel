@@ -22,14 +22,14 @@
 					
 					?>
 					<tr>
-						<td><?php echo $casal[0];?><a href="quartoliberado.php">
-							<button>Reservar</button></a>
+						<td><?php echo $casal[0];?><a href="quartoliberado.php/?numero=<?php echo $casal[0];?>">
+							<button>Liberar</button></a>
 						</td><br><br>
 					</tr>
 					<?php
 				}
 			}else{
-				echo "Todos os quartos de casal estão indisponiveis.<br>";	
+				echo "Todos os quartos de casal estão disponiveis.<br>";	
 			}
 		}else{
 			$comando2="SELECT nr_quarto FROM quartos WHERE disponibilidade=0 and camas_solteiro=1";
@@ -40,19 +40,18 @@
 				
 				foreach ($resultado2 as $solteiro) {
 					
-					?>
+				?>
 					<tr>
-						<td><form method="get" action="quartoliberado.php"">
-							<input type="text"  disabled="true" reandonly="true" name="solteiro" value="<?php echo $solteiro[0];?>"/>
-							<?php echo $solteiro[0];?>
-							<input type="submit" name="button" value="Enviar"></form></td><br><br>
+						<td><?php echo $solteiro[0];?><a href="quartoliberado.php/?numero=<?php echo $solteiro[0];?>">
+							<button>Liberar</button></a>
+						</td><br><br>
 					</tr>
 					<?php
 				}
 			}else{
-				echo "Todos os quartos de solteiro estão indisponiveis.<br>";	
+				echo "Todos os quartos de solteiro estão disponiveis.<br>";	
 			}
 		}		
 	}	
 ?>
-<a href="reserva.php">Voltar</a>
+<a href="../reserva.php">Voltar</a>

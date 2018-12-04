@@ -8,9 +8,10 @@ require_once("cabecalho2.php");
     Bem vindo(a) <?=$nome?>, o que deseja?<br>
 	<div>
         <ul>
+            <li><a href="quartos.php">Quartos</a></li>
             <li><a href="reserva.php">Reservar quarto</a></li>
+            <li><a href="libera.php">Liberar quarto</a></li>
             <li><a href="clientes.php">Central de controle de Clientes</a></li>
-            <li><a href="quartosindisponiveis.php">Liberar quarto</a></li>
         </ul>
     </div>
 

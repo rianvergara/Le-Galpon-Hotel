@@ -3,7 +3,6 @@
 	require_once("servidor.php");
 	require_once("cabecalho.php");
 	
-
 	// echo $_GET['numero'];
 	// die();
 	
@@ -21,6 +20,4 @@
 	}
 ?>	
 <a href="../index.php"><br>Voltar</a>
-	
-
 	
