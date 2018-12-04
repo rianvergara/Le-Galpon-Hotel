@@ -4,7 +4,7 @@
 	require_once("cabecalho.php");
 ?>
 
-<h1>Quartos disponiveis</h1>
+<h1>Quartos indisponiveis</h1>
 
 <?php
 	
@@ -12,7 +12,7 @@
 
 	if(isset($_POST['tipo'])) {
 		if($_POST['tipo']=='casal'){
-			$comando1="SELECT nr_quarto FROM quartos WHERE disponibilidade=1 and cama_casal=1";
+			$comando1="SELECT nr_quarto FROM quartos WHERE disponibilidade=0 and cama_casal=1";
 			$enviar1=mysqli_query($conn, $comando1);
 
 			if (mysqli_num_rows($enviar1)>0) {
@@ -22,7 +22,7 @@
 					
 					?>
 					<tr>
-						<td><?php echo $casal[0];?><a href="quartoreservado.php">
+						<td><?php echo $casal[0];?><a href="quartoliberado.php">
 							<button>Reservar</button></a>
 						</td><br><br>
 					</tr>
@@ -32,7 +32,7 @@
 				echo "Todos os quartos de casal estão indisponiveis.<br>";	
 			}
 		}else{
-			$comando2="SELECT nr_quarto FROM quartos WHERE disponibilidade=1 and camas_solteiro=1";
+			$comando2="SELECT nr_quarto FROM quartos WHERE disponibilidade=0 and camas_solteiro=1";
 			$enviar2=mysqli_query($conn, $comando2);
 			
 		if(mysqli_num_rows($enviar2)>0) {
@@ -42,7 +42,7 @@
 					
 					?>
 					<tr>
-						<td><form method="get" action="quartoreservado.php"">
+						<td><form method="get" action="quartoliberado.php"">
 							<input type="text"  disabled="true" reandonly="true" name="solteiro" value="<?php echo $solteiro[0];?>"/>
 							<?php echo $solteiro[0];?>
 							<input type="submit" name="button" value="Enviar"></form></td><br><br>
