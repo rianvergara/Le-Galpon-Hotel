@@ -8,9 +8,7 @@
 
 <?php
 	
-	$comando2="SELECT nr_quarto FROM quartos WHERE disponibilidade=1 and camas_solteiro=1";
-	$enviar2=mysqli_query($conn, $comando2);
-	$resultado2=mysqli_fetch_assoc($enviar2);
+	
 
 	if(isset($_POST['tipo'])) {
 		if($_POST['tipo']=='casal'){
@@ -19,8 +17,7 @@
 
 			if (mysqli_num_rows($enviar1)>0) {
 				$resultado1=mysqli_fetch_all($enviar1);
-				#var_dump($resultado1);
-				#	die();
+			
 				foreach ($resultado1 as $casal) {
 					
 					?>
@@ -32,18 +29,21 @@
 			}else{
 				echo "Todos os quartos de casal estão indisponiveis.<br>";	
 			}
+		}else{
+			$comando2="SELECT nr_quarto FROM quartos WHERE disponibilidade=1 and camas_solteiro=1";
+			$enviar2=mysqli_query($conn, $comando2);
 			
-			
-		
-
-			
-		}
-		if($_POST['tipo']=='solteiro'){
-			if('disponibilidade'==1 and 'camas_solteiro'==1) {
+		if(mysqli_num_rows($enviar2)>0) {
+				$resultado2=mysqli_fetch_all($enviar2);
+				
 				foreach ($resultado2 as $solteiro) {
-					$nr_quarto=$solteiro['nr_quarto'];?>
+					
+					?>
 					<tr>
-						<td><?=$nr_quarto?><a href="quartoreservado.php"><button>Reservar</button></a></td></td>
+						<td><form method="get" action="quartoreservado.php"">
+							<input type="text"  disabled="true" reandonly="true" name="solteiro" value="<?php echo $solteiro[0];?>"/>
+							<?php echo $solteiro[0];?>
+							<input type="submit" name="button" value="Enviar"></form></td><br><br>
 					</tr>
 					<?php
 				}
