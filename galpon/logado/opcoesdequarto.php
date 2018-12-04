@@ -22,7 +22,7 @@
 					
 					?>
 					<tr>
-						<td><?php echo $casal[0];?><a href="quartoreservado.php">
+						<td><?php echo $casal[0];?><a href="quartoreservado.php/?numero=<?php echo $casal[0];?>">
 							<button>Reservar</button></a>
 						</td><br><br>
 					</tr>

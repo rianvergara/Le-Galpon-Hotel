@@ -9,8 +9,8 @@ require_once("cabecalho2.php");
 	<div>
         <ul>
             <li><a href="reserva.php">Reservar quarto</a></li>
-            <li><a href="clientes.php">Centra de controle de Clientes</a></li>
-            <li><a href="">Liberar quarto</a></li>
+            <li><a href="clientes.php">Central de controle de Clientes</a></li>
+            <li><a href="quartosindisponiveis.php">Liberar quarto</a></li>
         </ul>
     </div>
 

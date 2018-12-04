@@ -5,7 +5,15 @@
 
 	$comando="SELECT * FROM quartos";
 	$enviar=mysqli_query($conn, $comando);
-	$resultado=mysqli_fetch_assoc($enviar);
+	
+
+	if (mysqli_num_rows($enviar)>0) {
+		$resultado=mysqli_fetch_all($enviar);
+		// echo "<pre>";
+		// var_dump($resultado);
+		// echo "</pre>";
+		// die();
+	
 
 ?>
 <table>
@@ -20,6 +28,12 @@
 
 	foreach ($resultado as $quarto) :
 
+			echo "<pre>";
+		var_dump($quarto);
+		echo "</pre>";
+		
+			
+
 		#$nr_quarto=$quarto['nr_quarto'];
 		#$cama_casal=$quarto['cama_casal'];
 		#$camas_solteiro=$quarto['camas_solteiro'];
@@ -32,18 +46,31 @@
 	#}
 ?>
 	<tr>
-		<td><?php echo $quarto['nr_quarto'];?></td>
-		<td><?php echo $quarto['cama_casal'];?></td>
-		<td><?php echo $quarto['camas_solteiro'];?></td>
-		<td><?php echo $quarto['disponibilidade'];?></td>
+		<td><?php echo $quarto['0'];?></td>
+		<td><?php echo $quarto['1'];?></td>
+		<td><?php echo $quarto['2'];?></td>
+		<td>
+			<?php 
+				if ($quarto['3']==0) {
+					echo "Indisponível";
+				}else {
+					echo "Disponível";
+				}
+
+
+			?>
+			
+		</td>
 	</tr>
 
 <?php
-	endforeach
+	endforeach;
 ?>
 
 </table>
+
 <?php
+}
 #$quarto['nr_quarto'];
 #$quarto['cama_casal'];
 #$quarto['camas_solteiro'];
